@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Form, FormGroup, Input, Label, Modal, ModalBody, ModalHeader, ModalFooter } from 'reactstrap';
+import { NavLink } from 'react-router-dom';
 
 class Navbar extends Component {
   constructor(props) {
@@ -29,7 +30,7 @@ class Navbar extends Component {
     return (
       <div>
         <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-          <a className="navbar-brand" href="/CName">T-Crews Notifications</a>
+          <a className="navbar-brand" href="/">T-Crews Notifications</a>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -37,10 +38,14 @@ class Navbar extends Component {
           <div className="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
-                <a className="nav-link" href="/">Home</a>
+                <NavLink to="/" exact activeClassName="active">
+                  <span className="nav-link" href="/">Home</span>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/notifications">Notifications</a>
+                <NavLink to="/notifications" activeClassName="active">
+                  <span className="nav-link" href="/notifications">Notifications</span>
+                </NavLink>
               </li>
             </ul>
 
